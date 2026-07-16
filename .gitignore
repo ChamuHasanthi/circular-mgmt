@@ -8,7 +8,8 @@ instance/
 *.sqlite3
 *.db
 .claude
-
+9f6342680b3e89150c23a1b9a2611a84_venv/
+backend/9f6342680b3e89150c23a1b9a2611a84_venv/
 # ---- Environment ----
 .env
 backend/.env
