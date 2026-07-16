@@ -46,4 +46,9 @@
   .badge {
     @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
   }
+  /* Horizontal-scroll wrapper for wide tables so they never clip on small
+     screens — the table keeps its min width and scrolls inside this box. */
+  .table-wrap {
+    @apply w-full overflow-x-auto;
+  }
 }

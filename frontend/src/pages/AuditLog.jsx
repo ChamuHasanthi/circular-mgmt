@@ -60,8 +60,8 @@ export default function AuditLog() {
         </form>
       </div>
 
-      <div className="card overflow-hidden">
-        <table className="w-full text-sm">
+      <div className="card table-wrap">
+        <table className="w-full min-w-[640px] text-sm">
           <thead className="bg-ink-surface text-left text-xs uppercase tracking-wide text-ink-muted">
             <tr>
               <th className="px-4 py-3 font-medium">When</th>

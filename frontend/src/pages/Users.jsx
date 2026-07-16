@@ -245,8 +245,8 @@ export default function Users() {
       </div>
 
       {/* Users table */}
-      <div className="card overflow-hidden">
-        <table className="w-full text-sm">
+      <div className="card table-wrap">
+        <table className="w-full min-w-[720px] text-sm">
           <thead className="bg-ink-surface text-left text-xs uppercase text-ink-muted">
             <tr>
               <th className="px-4 py-3 font-medium">User</th>

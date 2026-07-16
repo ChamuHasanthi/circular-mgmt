@@ -109,9 +109,9 @@ export default function ManagerDashboard() {
       </div>
 
       {/* Per-department (FR-31) */}
-      <div className="card p-6">
+      <div className="card overflow-x-auto p-6">
         <h2 className="mb-3 text-sm font-semibold text-ink">Compliance by department</h2>
-        <table className="w-full text-sm">
+        <table className="w-full min-w-[520px] text-sm">
           <thead className="border-b border-ink-line text-left text-xs uppercase tracking-wide text-ink-muted">
             <tr><th className="py-2 font-medium">Department</th><th className="font-medium">Acknowledged</th><th className="font-medium">Pending</th><th className="font-medium">Overdue</th><th className="font-medium">Rate</th></tr>
           </thead>
@@ -130,9 +130,9 @@ export default function ManagerDashboard() {
       </div>
 
       {/* Per-circular compliance + employee drilldown (FR-32) */}
-      <div className="card p-6">
+      <div className="card overflow-x-auto p-6">
         <h2 className="mb-3 text-sm font-semibold text-ink">Circular compliance</h2>
-        <table className="w-full text-sm">
+        <table className="w-full min-w-[560px] text-sm">
           <thead className="border-b border-ink-line text-left text-xs uppercase tracking-wide text-ink-muted">
             <tr><th className="py-2 font-medium">Circular</th><th className="font-medium">Acknowledged</th><th className="font-medium">Overdue</th><th className="font-medium">Rate</th><th /></tr>
           </thead>

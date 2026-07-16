@@ -32,8 +32,8 @@ export default function Approvals() {
         <h1 className="text-xl font-bold text-ink">Circulars awaiting approval</h1>
       </div>
 
-      <div className="card overflow-hidden">
-        <table className="w-full text-sm">
+      <div className="card table-wrap">
+        <table className="w-full min-w-[640px] text-sm">
           <thead className="bg-ink-surface text-left text-xs uppercase text-ink-muted">
             <tr>
               <th className="px-4 py-3 font-medium">Circular</th>
@@ -74,8 +74,8 @@ export default function Approvals() {
       {/* Approval history (four-eyes audit trail) */}
       <div>
         <h2 className="mb-2 text-sm font-semibold text-ink">Approval history</h2>
-        <div className="card overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="card table-wrap">
+          <table className="w-full min-w-[640px] text-sm">
             <thead className="bg-ink-surface text-left text-xs uppercase tracking-wide text-ink-muted">
               <tr>
                 <th className="px-4 py-3 font-medium">Action</th>

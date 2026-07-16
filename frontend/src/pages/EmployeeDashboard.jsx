@@ -165,8 +165,8 @@ export default function EmployeeDashboard() {
         <div className="rounded-lg bg-brand-50 px-3 py-2 text-sm text-brand-700">{msg}</div>
       )}
 
-      <div className="card overflow-hidden">
-        <table className="w-full text-sm">
+      <div className="card table-wrap">
+        <table className="w-full min-w-[720px] text-sm">
           <thead className="bg-ink-surface text-left text-xs uppercase text-ink-muted">
             <tr>
               <th className="px-4 py-3 font-medium">Circular</th>
@@ -263,7 +263,7 @@ export default function EmployeeDashboard() {
               <input className="input" value={edit.title}
                 onChange={(e) => setEdit({ ...edit, title: e.target.value })} required />
             </Field>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <Field label="Issue date">
                 <input type="date" className="input" value={edit.issue_date || ""}
                   onChange={(e) => setEdit({ ...edit, issue_date: e.target.value })} />
