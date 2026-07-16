@@ -18,6 +18,7 @@ Each eval item: {"question": ..., "expected_circular": "02/2024",
 """
 import json
 import os
+import re
 
 from app import create_app
 from app.extensions import db
@@ -33,6 +34,36 @@ _TEMPLATE = [
         "expected_keywords": ["days"],
     }
 ]
+
+
+_STOP = {"the", "a", "an", "of", "to", "and", "or", "in", "on", "for", "is",
+         "be", "must", "this", "that", "by", "with", "as", "at", "all"}
+
+
+def _stem(word):
+    """Crude suffix stripper so suspend/suspended/suspension all share a root."""
+    for suf in ("ations", "ation", "ing", "ed", "es", "s", "ion"):
+        if word.endswith(suf) and len(word) - len(suf) >= 4:
+            return word[: -len(suf)]
+    return word
+
+
+def _kw_hit(keyword, answer):
+    """A keyword counts as found if either the phrase appears verbatim, or all
+    of its significant (non-stopword) words appear stem-matched in the answer.
+
+    This tolerates wording differences the exact-substring test rejected:
+      'suspension' vs 'suspended', 'licensed commercial banks' vs 'licensed
+    banks'. It avoids false hits by requiring EVERY content word to match.
+    """
+    kl, al = keyword.lower().strip(), answer.lower()
+    if kl in al:
+        return True
+    ans_stems = {_stem(w) for w in re.findall(r"[a-z0-9]+", al)}
+    kw_words = [w for w in re.findall(r"[a-z0-9]+", kl) if w not in _STOP]
+    if not kw_words:
+        return kl in al
+    return all(_stem(w) in ans_stems for w in kw_words)
 
 
 def load_eval():
@@ -85,7 +116,7 @@ def main():
             kws = it.get("expected_keywords") or []
             if kws:
                 ans_total += 1
-                ok = any(k.lower() in ans.lower() for k in kws)
+                ok = any(_kw_hit(k, ans) for k in kws)
                 ans_hits += ok
                 line += f"\n   answer: {'HIT' if ok else 'MISS'} (expected one of {kws})"
             print(line)

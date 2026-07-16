@@ -1,0 +1,410 @@
+FAITHFULNESS SPOT-CHECK WORKSHEET
+Rubric: Faithful / Minor issue / Unfaithful
+
+For each: read the summary, confirm every claim appears in the
+source excerpt, then write a verdict on the VERDICT line.
+
+==========================================================================
+
+[1] Circular 04/2024  (id 20)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: SMEs that have been classified as Stage 3 on or after
+  01.04.2019, and, SMEs that commenced discussions on business revival
+  with the Business Revival Units of the respective banks by 31.03.2025,
+  subject to submission of all necessary documents. Commencing of
+  repayment of the rescheduled loans by eligible SME borrowers where an
+  aggregate capital outstanding of credit facilities as at 15.12.2024 is
+  below Rs. 25 Mn. Waiving off the unpaid interest (excluding capitalised
+  interest) applicable to the period between 01. 04.2019 and 15. 12.20 24
+  on the credit facilities of eligibleSME borrowers, based on the
+  reschedulement agreements, considering the financial position of the
+  bank, as given in Table 1..  Key Points: - (a) Credit facilities of SMEs
+  that have been classified as Stage 3 on or after 01.04.2019 - (b) SMEs
+  that commenced discussions on business revival with the Business Revival
+  Units of the respective banks by 31.03.2025, subject to submission of
+  all necessary documents. - Commencing of repayment of the rescheduled
+  loans by eligible SME borrowers where an aggregate capital outstanding
+  of credit facilities as at 15.12.2024 is below Rs. 25 Mn, not later than
+  31.12.2025. - (d) Commencing of repayment of the rescheduled loans by
+  SME borrowers where an aggregate capital outstanding of credit
+  facilities as at 15.12.2024, is above Rs. 50 Mn, not later than
+  30.06.2025.
+
+SOURCE (first ~900 chars):
+  RELIEF MEASURES TO ASSIST THE AFFECTED SMALL AND MEDIUM ENTERPRISES As
+  discussed at the meetings of the Working Committee on Recovery of Loans
+  by Banks (Special Provisions) (Amendment) Act, No. 26 of 2024, it is
+  noted that the Sri Lanka Banks’ Association (Guarantee) Ltd. (SLBA), has
+  agreed that the relief measures in paragraph 1 below will be provided by
+  the licensed commercial banks and licensed specialised banks
+  (hereinafter referred to as licensed banks), to the Small and Medium
+  Enterprises (SMEs) affected due to the Easter Sunday attack, Covid-19
+  pandemic and the extraordinary macroeconomic conditions that prevailed
+  during the recent past. It is further noted that SLBA, in formulating
+  the relief measures, was of the view that any suspension to Parate
+  execution will not be beyond 31.03.2025. Features of the Relief Measures
+  Ll Relief measures will apply only to the credit facilities o
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[2] Circular 01/2025  (id 21)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: The Central Bank of Sri Lanka has issued an addendum to
+  Circular No. 04 of 2024 on Relief Measures to Assist the Affected Small
+  and Medium Enterprises (SMEs). This circular aims to provide relief
+  measures for SMEs affected by the economic situation, ensuring effective
+  implementation across all licensed banks. Key Points: - Licensed banks
+  must establish a Relief Banking Unit to extend and monitor relief
+  measures under Circular No. 04 of 2024. - Banks may reschedule credit
+  facilities for eligible borrowers up to ten years on a case-by-case
+  basis, considering repayment capacity and an acceptable revival plan. -
+  Licensed banks are requested to establish a transparent grievance-
+  handling mechanism with respect to disputes between the bank and
+  borrower regarding auctioned properties. - Banks must report details of
+  borrowers who approached them to avail relief measures from 15.12.2024
+  to the reporting date. - The existing Business Revival Units established
+  under Circular No. 02 of 2024 will continue for their intended purpose.
+
+SOURCE (first ~900 chars):
+  CENTRAL BANK OF SRI LANKA 01 January 2025 CIRCULAR No. 01 of 2025
+  ADDENDUM TO THE CIRCULAR NO. 04 OF 2024 ON RELIEF MEASURES TO ASSIST THE
+  AFFECTED SMALL AND MEDIUM ENTERPRISES The Central Bank of Sri Lanka
+  hereby issues the following Addendum to further clarify Circular No. 04
+  of 2024 on Relief Measures to Assist the Affected Small and Medium
+  Enterprises (SMEs) with a view to ensuring effective implementation of
+  the relief measures specified in the cited Circular in a consistent
+  manner across all licensed banks. Licensed banks shall establish a
+  Relief Banking Unit for the purpose of extending and monitoring the
+  relief measures under the cited Circular for the effective
+  implementation of such relief measures while the existing Business
+  Revival Units established under Circular No. 02 of 2024 on Guidelines
+  for the Establishment of Business Revival Units in Licensed Banks, will
+  continue for
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[3] Circular 01/2021  (id 22)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: Licensed commercial banks and licensed specialised banks are
+  required to suspend recovery actions against Small and Medium Enterprise
+  (SME) Paddy Millers for a period of six months due to the COVID-19
+  pandemic. This suspension is aimed at supporting SME Paddy Millers
+  amidst the Government's initiatives. The suspension applies from January
+  1, 2021.  Key Points: - Licensed banks must suspend recovery actions
+  against SME Paddy Millers until June 30, 2021. - Recovery actions can be
+  suspended on condition that a debt re-payment agreement is reached
+  between the bank and the borrower. - In cases where resolutions for
+  recovery have already been passed, auctioning of assets will be
+  suspended until June 30, 2021. - Licensed banks must defer passing new
+  resolutions under relevant Acts until June 30, 2021. - Borrowers with
+  on-going litigations in courts relating to recovery can enter into an
+  agreement by submitting an affidavit to the Courts.
+
+SOURCE (first ~900 chars):
+  a \ Se MONETARY BOARD CENTRAL BANK OF SRI LANKA /3 January 2021 CIRCULAR
+  No. 01 of 2021 SUSPENSION OF RECOVERY ACTIONS AGAINST SMALL AND MEDIUM
+  ENTERPRISE (SME) PADDY MILLERS Considering the Government initiatives to
+  support the SME Paddy Millers amidst COVID 19 pandemic for the upcoming
+  harvesting seasons, licensed commercial banks and licensed specialised
+  banks (hereinafter referred to as licensed banks), are required to
+  suspend recovery actions against SME Paddy Millers for a period of six
+  months commencing from 1 January 2021 as specified below. (1) In the
+  case where a licensed bank has commenced or given notice of recovery
+  action under the provisions of the Recovery of Loans by Banks (Special
+  Provisions) Act, No. 4 of 1990 or Mortgage Act No. 06 of 1949 as amended
+  or Finance Leasing Act No. 56 of 2000 or any other relevant Act in this
+  regard, such recovery actions shall be suspended
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[4] Circular 01/2022  (id 23)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: The Central Bank of Sri Lanka has issued guidelines for
+  licensed banks to establish Post COVID-19 Revival Units to assist
+  underperforming and non-performing borrowers affected by the pandemic.
+  The purpose is to revive viable businesses and contribute to economic
+  development.  Key Points: - Licensed banks must formulate a revival and
+  rehabilitation policy approved by the Board of Directors, including a
+  mandate for establishment, scope of activities, revival mechanism, and
+  other necessary measures. - The Revival Unit shall be headed by a Key
+  Management Personnel with sufficient authority and seniority, and
+  licensed banks must ensure adequate staffing and resources for the Unit.
+  - Licensed banks may consider establishing Units at large branches or
+  regional offices if they have more than 50 bank branches; otherwise, the
+  Unit will be centrally located. - The Revival Unit shall actively liaise
+  with branches and other business units to identify borrowers requiring
+  rehabilitation assistance and develop rehabilitation proposals. -
+  Licensed banks must not consider borrowers that have defaulted due to
+  diversion of funds, mismanagement, or unviable projects for revival,
+  unless they are classified as non-performing prior to 01 April 2020 or
+  under litigation. - The Revival Unit shall conduct awareness programs,
+  provide credit counselling and business advisory services, and assist
+  businesses in reaching out to potential investors. - Licensed banks must
+  adopt accounting treatment for facilities considered under the Unit as
+  per Sri Lanka Accounting Standards and related Circulars/guidelines
+  issued by CBSL. - Licensed banks must report progress of rehabilitation
+  proposals availing concessions under Post COVID-19 Revival Units to the
+  bank's borrowers at the end of each quarter, within 15 working days.
+
+SOURCE (first ~900 chars):
+  af March 2022 GUIDELINES ON ESTABLISHMENT OF POST COVID-19 REVIVAL UNITS
+  IN LICENSED BANKS The prolonged nature of the COVID-19 pandemic has led
+  to disruption in income generating activities of businesses adversely
+  impacting their ability to duly repay their loans and thereby impairing
+  the recovery process of licensed commercial banks and licensed
+  specialised banks (hereinafter referred to as licensed banks).
+  Therefore, with a view to facilitating the sustainable economic revival
+  of businesses affected by the COVID-19 pandemic and to mitigate the
+  increase in impaired assets of licensed banks, the Central Bank of Sri
+  Lanka (CBSL) in its “Six-Month Road Map for Ensuring Macroeconomic and
+  Financial System Stability” announced the need for establishment of Post
+  COVID-19 Revival Units in licensed banks. Accordingly, CBSL hereby
+  issues broad guidelines to give effect to the establishment of Po
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[5] Circular 02/2022  (id 24)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: The Central Bank of Sri Lanka has issued a circular to provide
+  concessions to affected borrowers due to extraordinary macroeconomic
+  circumstances. Licensed banks are required to implement these
+  concessions to help businesses and individuals recover from the impact
+  of the crisis. Key Points: - Licensed banks must provide appropriate
+  concessions for performing credit facilities of individuals or
+  businesses whose income or business has been adversely affected by the
+  current macroeconomic conditions, on a case-by-case basis, for a period
+  of six months from the date of this Circular. - Concessions may include
+  a grace period for capital or interest, restructuring of credit
+  facilities, or any other concession. The interest rate applicable for
+  concessions granted to non-performing credit facilities shall not exceed
+  15.5%. - Licensed banks must devise a suitable mechanism to structure
+  the repayment plan for regular installment loans with an extended
+  tenure, not exceeding the contracted instalment value of the existing
+  credit facility. - Borrowers who wish to fully settle any of the
+  existing credit facilities without charging additional fees shall be
+  given the opportunity to do so. - Licensed banks must suspend recovery
+  actions against all credit facilities that have been classified as non-
+  performing on or after 01.01.2020, until 31.12.2022. - Borrowers who are
+  willing for an early settlement of credit facilities must make a request
+  to the respective licensed bank on or before 30.09.2022. - Licensed
+  banks shall report the details of concessions availed by their borrowers
+  to the Bank Supervision Department, as at each month end, within 15
+  working days, commencing from 31 July 2022. - Borrowers who are willing
+  for an early settlement of credit facilities must make a request to the
+  respective licensed bank on or before 30.09.2022. - Licensed banks shall
+  not decline new loan applications from borrowers solely based on adverse
+  CRIB records.
+
+SOURCE (first ~900 chars):
+  O7 July 2022 CONCESSIONS TO AFFECTED BORROWERS AMIDST THE PREVAILING
+  EXTRAORDINARY MACROECONOMIC CIRCUMSTANCES With a view to meeting the
+  challenges faced by businesses and individuals engaged in various
+  economic sectors due to the prevailing extraordinary macroeconomic
+  circumstances, the Central Bank of Sri Lanka (CBSL), requests licensed
+  commercial banks and licensed specialised banks (hereinafter referred to
+  as licensed banks) to provide the following concessions, to affected
+  borrowers, on a need basis. These concessions are granted to devise
+  suitable repayment arrangements based on the new repayment capacities of
+  the borrower, on a case-by-case basis, while preserving banking sector
+  stability by preventing any elevated strain on the financial system.
+  Accordingly, this Circular is issued to provide broad guidelines with
+  prudential requirements for consistent implementation across all
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[6] Circular 04/2018  (id 25)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: This circular outlines guidelines for licensed banks in Sri
+  Lanka to adopt the Sri Lanka Accounting Standard (SLFRS 9) on Financial
+  Instruments. The aim is to establish consistent and prudent practices in
+  credit risk management, impairment of financial assets, and regulatory
+  reporting. Key Points: - Licensed banks must calculate expected credit
+  losses for financial instruments measured at amortised cost or fair
+  value through other comprehensive income, using data from at least five-
+  year periods. - Credit facilities with contractual payments more than 30
+  days past due are classified as Stage 2, while those with payments over
+  90 days past due are classified as Stage 3. - Licensed banks must
+  maintain standardized processes and detailed checklists to assess and
+  identify SPPI features of their products and contracts. - The aggregate
+  amount of impairment allowances should be adequate and consistent with
+  the objectives of SLFRS 9. - Licensed banks shall submit all periodical
+  information, including web-based statutory returns, to CBSL in
+  accordance with existing regulations within 30 days after the end of
+  each quarter. - The first day impact arising from the adoption of SLFRS
+  9 must be disclosed in financial statements and reported to CBSL within
+  30 days after the end of each quarter.
+
+SOURCE (first ~900 chars):
+  Bank Supervision Department Central Bank of Sri Lanka 31 December 2018
+  Guidelines to Licensed Banks on the Adoption of Sri Lanka Accounting
+  Standard – SLFRS 9: Financial Instruments This page has been left blank
+  intentionally Table of Contents 1. Introduction ........................
+  ........................................................................
+  ...................................2 2 Objectives of Issuing Guidelines
+  on Adoption of SLFRS 9
+  .........................................................2 3.
+  Classification and Measurement of Financial Assets and Financial
+  Liabilities ...........................3 4. Principles for Sound Credit
+  Risk Management ........................................................
+  ....................5 5. Impairment of Financial Assets ................
+  ........................................................................
+  ............6 6. Collateral Valuat
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[7] Circular 02/2021  (id 27)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: The Central Bank of Sri Lanka has issued an amendment to
+  Circular No. 04 of 2018 regarding the adoption of Sri Lanka Accounting
+  Standard — SLFRS 9: Financial Instruments by licensed banks. This
+  circular aims to establish consistent practices in the adoption of this
+  standard during exceptional circumstances.  Key Points: - Licensed banks
+  must apply a minimum Loan Loss Coverage (LGD) of 10 per cent when
+  computing expected losses for the year 2021. - The amendment inserts
+  Guideline 2.5(c) into Circular No. 04 of 2018, which permits this
+  exception. - This change applies to all licensed banks in Sri Lanka. -
+  The amendment is effective immediately and supersedes previous
+  guidelines. - Banks must update their accounting practices accordingly.
+  - Compliance with the amended guideline is mandatory for all licensed
+  banks. - The Central Bank will monitor compliance with the new
+  guideline.
+
+SOURCE (first ~900 chars):
+  CENTRAL BANK OF SRI LANKA BANK SUPERVISION DEPARTMENT 2 January 2021
+  CIRCULAR No. 02 of 2021 Amendments to Circular No. 04 of 2018 on
+  Guidelines to Licensed Banks on the Adoption of Sri Lanka Accounting
+  Standard — SLFRS 9: Financial Instruments The Central Bank of Sri Lanka,
+  having considered the current exceptional circumstances, latest Budget
+  proposal on International Sovereign Bonds and with a view to
+  establishing consistent practices on the adoption of Sri Lanka
+  Accounting Standard — SLFRS 9: Financial Instruments by licensed banks,
+  hereby issues the amendment to the Annex I of the Circular No. 04 of
+  2018 on Guidelines to Licensed Banks on the Adoption of Sri Lanka
+  Accounting Standard — SLFRS 9: Financial Instruments. Guideline 2.5 (c)
+  shall be inserted immediately after Guideline 2.5 (b) as follows: 2.5(c)
+  However, it is permitted to apply a minimum LGD of 10 per cent when
+  computing
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[8] Circular 02/2025  (id 28)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: Licensed banks in Sri Lanka are required to report IT and
+  cybersecurity incidents to the Central Bank of Sri Lanka (CBSL) to
+  ensure operational resilience and safeguard customer information and
+  assets.  Key Points: - Licensed banks must report IT and cybersecurity
+  incidents, including intrusion/hacking, malware, ransomware, phishing,
+  and online scams, within 2 hours of detection to the Director, Bank
+  Supervision Department via techrisk.bsd@cbsl.lk. - Quarterly reports on
+  IT and cybersecurity incidents must be submitted by licensed banks
+  within 15 days following the end of each quarter to the Director, Bank
+  Supervision Department via techrisk.bsd@cbsl.lk. - Licensed banks are
+  required to submit detailed reports on IT and cybersecurity incidents
+  within 14 working days of detection to the Director, Bank Supervision
+  Department via techrisk.bsd@cbsl.lk. - The report must include
+  information on the incident, business impact, data and information
+  security impact, stakeholders' and customers' impact, reputational
+  impact, regulatory or legal impact, financial impact, corrective actions
+  taken, and target dates for corrective actions. - Licensed banks are
+  required to submit a preliminary impact assessment in summary within 2
+  hours of detection to the Director, Bank Supervision Department via
+  techrisk.bsd@cbsl.lk.
+
+SOURCE (first ~900 chars):
+  CENTRAL BANK OF SRI LANKA BANK SUPERVISION DEPARTMENT 07 May 2025
+  CIRCULAR No. 02 of 2025 REPORTING OF INFORMATION TECHNOLOGY AND
+  CYBERSECURITY INCIDENTS OF LICENSED BANKS The Central Bank of Sri Lanka
+  (CBSL) having observed the increased reliance on digital infrastructure
+  by licensed banks, the risk of cyberthreats, data breaches, and system
+  failures that require prompt and transparent reporting of such incidents
+  to CBSL and relevant stakeholders to ascertain risks, mitigate potential
+  disruptions and safeguard customer information and assets, hereby issues
+  this Circular to licensed commercial banks and licensed specialised
+  banks (herein after referred to as “licensed banks”) with a view to
+  ensuring the operational resilience of licensed banks in Sri Lanka. This
+  Circular is issued further to the requirements stipulated in the Banking
+  Act Direction No. 16 of 2021 on “Regulatory Framework
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[9] Circular 03/2021  (id 30)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: Licensed commercial banks and licensed specialised banks are
+  required to provide concessions for lease facilities obtained by
+  COVID-19 affected businesses and individuals engaged in passenger
+  transportation services. The Central Bank of Sri Lanka has issued a
+  circular to give effect to this scheme, which aims to support the sector
+  during the ongoing pandemic. Key Points: - Licensed banks shall defer
+  lease installments for eligible borrowers for a period not exceeding 6
+  months commencing from 1 April 2021 or a shorter period as applicable. -
+  Eligible borrowers may request deferral of lease installments on or
+  before 19 April 2021, in writing or through electronic means.
+
+SOURCE (first ~900 chars):
+  CONCESSIONS FOR LEASE FACILITIES OBTAINED BY BUSINESSES AND INDIVIDUALS
+  IN PASSENGER TRANSPORTATION SECTOR With a view to meeting the challenges
+  faced by businesses and individuals engaged in passenger transportation
+  sector due to the ongoing COVID-19 pandemic, the Central Bank of Sri
+  Lanka (CBSL) requests licensed commercial banks and licensed specialised
+  banks, (hereinafter referred to as licensed banks), to provide
+  concession for lease facilities obtained by COVID-19 affected businesses
+  and individuals engaged in passenger transportation services
+  (hereinafter referred to as the Scheme) for six months commencing from 1
+  April 2021 as specified below. Accordingly, this Circular is issued to
+  give effect to the Scheme in a consistent manner across all licensed
+  banks. Period of deferment of lease installments Licensed banks shall
+  defer the lease installments for a period not exceeding 6 mon
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+[10] Circular 03/2024  (id 31)
+--------------------------------------------------------------------------
+SUMMARY:
+  Overview: The Central Bank of Sri Lanka has issued a circular to
+  establish guidelines for mobile banking units (MBUs) of licensed
+  commercial banks. The goal is to strengthen the process and adopt a
+  uniform practice among LCBs in establishing MBUs. This will empower
+  empowerment through mobile banking.  Key Points: - Licensed Commercial
+  Banks (LCBs) must submit an application (BSD-MBU-01) to the Director of
+  Bank Supervision (DBS) on a quarterly basis, 15 working days prior to
+  the commencement of such quarter. - The application should be submitted
+  with a cover letter signed by the Chief Executive Officer/Chief
+  Operating Officer or Deputy Chief Executive Officer.
+
+SOURCE (first ~900 chars):
+  CENTRAL BANK OF SRI LANKA 03 December 2024 CIRCULAR No.03 of2024
+  GUIDELINES FOR THE ESTABLISHMENT OF MOBILE BAI\KING UNITS OF LICENSED
+  COMMERCIAL BAI\KS The Central Bank of Sri Lanka, with a view to
+  strengthening the process and adopting a uniform practice among licensed
+  commercial banks (LCBs) in establishing Mobile Banking Units (MBUs),
+  hereby issues this Circular on Guidelines for the establishment of MBUs
+  of LCBs. Empowerment Mobile Banking Units In terms of Section 1 3,A.( I
+  ) of the Banking Act, No.30 of I 988, as amended, the Deputy Governor
+  may. on guidelines issued by the Central Bank of Sri Lanka for such
+  purpose, grant approval for the establishment of MBUs, subject to such
+  terms and conditions as he may determine, from time to time. An MBU
+  includes the following: a) Banking services carried out in vehicles in
+  different locations; b) Barefoot banking, i.e., bank officers visit
+
+VERDICT: ____________________   NOTES: ______________________
+==========================================================================
+
+Tally: ___ Faithful  ___ Minor issue  ___ Unfaithful   (out of 10)

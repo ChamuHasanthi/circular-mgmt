@@ -132,7 +132,6 @@ export default function EmployeeDashboard() {
     <div className="space-y-4">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wide text-brand-600">WF-02</div>
           <h1 className="text-xl font-bold text-ink">
             {isStaff ? "All Circulars" : "My Circulars"}
           </h1>

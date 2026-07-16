@@ -171,7 +171,137 @@ erDiagram
 
 ---
 
-## Figure 4.3 — Circular lifecycle (state diagram)
+## Figure 4.3 — Domain model (class diagram)
+
+```mermaid
+classDiagram
+    class User {
+        +int id
+        +str username
+        +str email
+        +str full_name
+        +str password_hash
+        +str role
+        +bool is_active
+        +datetime last_login
+    }
+    class Department {
+        +int id
+        +str name
+        +str code
+        +str description
+    }
+    class Circular {
+        +int id
+        +str circular_number
+        +str title
+        +date issue_date
+        +text extracted_text
+        +str priority
+        +str status
+        +datetime ack_deadline
+        +int uploaded_by
+        +int approved_by
+        +int amends_circular_id
+        +json distribution_intent
+        +datetime published_at
+    }
+    class Summary {
+        +int id
+        +int circular_id
+        +text summary_text
+        +json entities
+        +int word_count
+        +str bart_model
+        +float processing_seconds
+        +float rouge_score
+    }
+    class Category {
+        +int id
+        +str name
+    }
+    class Classification {
+        +int id
+        +int circular_id
+        +str category
+        +float confidence
+        +bool is_manual
+    }
+    class Acknowledgement {
+        +int id
+        +int circular_id
+        +int user_id
+        +str status
+        +datetime read_at
+        +datetime acknowledged_at
+        +bool is_late
+    }
+    class Notification {
+        +int id
+        +int user_id
+        +int circular_id
+        +str message
+        +bool is_read
+    }
+    class CircularDepartment {
+        +int circular_id
+        +int department_id
+        +datetime routed_at
+    }
+    class ChatConversation {
+        +int id
+        +int user_id
+        +int circular_id
+        +str title
+    }
+    class ChatLog {
+        +int id
+        +int conversation_id
+        +text question
+        +text answer
+        +json citations
+    }
+    class AuditLog {
+        +int id
+        +int user_id
+        +str action
+        +str entity_type
+        +int entity_id
+        +str detail
+    }
+    class ChangeRequest {
+        +int id
+        +int circular_id
+        +int requester_id
+        +str status
+        +str admin_reply
+    }
+
+    Department "1" --o "*" User : employs
+    User "1" --o "*" Circular : uploads
+    User "1" --o "*" Circular : approves
+    Circular "1" --o "0..1" Summary : has
+    Circular "1" --o "*" Classification : categorised
+    Category "1" --o "*" Classification : names
+    Circular "*" --o "*" Department : routed (CircularDepartment)
+    Circular "1" --o "*" Acknowledgement : tracked
+    User "1" --o "*" Acknowledgement : makes
+    Circular "1" --o "*" Notification : about
+    User "1" --o "*" Notification : receives
+    Circular "0..1" --o "*" Circular : amends
+    User "1" --o "*" ChatConversation : owns
+    ChatConversation "1" --o "*" ChatLog : contains
+    User "1" --o "*" AuditLog : acts
+    Circular "1" --o "*" ChangeRequest : flagged
+```
+
+> Note: `Classification.category` and `Category.name` are linked by name
+> (string), not a hard FK, so administrators can rename/remove categories without
+> orphaning existing classifications.
+
+---
+
+## Figure 4.4 — Circular lifecycle (state diagram)
 
 ```mermaid
 stateDiagram-v2
@@ -186,6 +316,54 @@ stateDiagram-v2
     published --> processing : Regenerate summary
     published --> [*]
 ```
+
+---
+
+## Figure 4.5 — End-to-end circular workflow (activity diagram)
+
+```mermaid
+flowchart TB
+    start(("Start")) --> up["Administrator uploads circular PDF"]
+    up --> ext["System extracts text (PyMuPDF)"]
+    ext --> ocr{"Text usable?"}
+    ocr -- "no" --> tess["Run Tesseract OCR"]
+    tess --> sum
+    ocr -- "yes" --> sum["Generate AI summary (LLM / BART fallback)"]
+    sum --> rev["Administrator reviews & edits summary"]
+    rev --> cls["Assign category + target departments"]
+    cls --> sub["Submit for approval"]
+    sub --> pend["Status: pending_approval"]
+    pend --> check{"Compliance Officer decision"}
+
+    check -- "Reject (with reason)" --> notifyA["Notify maker with reason"]
+    notifyA --> rev
+
+    check -- "Approve" --> pub["Status: published; record approver"]
+    pub --> fork1[" "]
+    fork1 --> route["Route to department employees"]
+    fork1 --> idx["Rebuild FAISS vector index"]
+    route --> ack["Create acknowledgements + notify + email"]
+    idx --> join1[" "]
+    ack --> join1
+    join1 --> read["Employee reads circular"]
+    read --> conf{"Acknowledged before deadline?"}
+    conf -- "no" --> remind["Send reminder + flag late"]
+    remind --> read
+    conf -- "yes" --> done["Compliance tracked as complete"]
+    done --> stop(("End"))
+
+    audit["Every step written to immutable audit log"]
+    audit -.-> pend
+    audit -.-> pub
+
+    classDef bar fill:#0e7c7b,stroke:#0e7c7b,color:#0e7c7b;
+    class fork1,join1 bar;
+```
+
+> Modelled as a UML activity diagram: rounded nodes are start/end, diamonds are
+> decisions, and the fork/join after publication shows that distribution and
+> vector-index rebuild happen in parallel. The audit log annotation runs across
+> the whole flow.
 
 ---
 
@@ -220,7 +398,9 @@ flowchart LR
     DEN --> RRF["Reciprocal Rank Fusion"]
     SPA --> RRF
     RRF --> SCOPE["Scope filter\n(circular / global,\ndemote superseded)"]
-    SCOPE --> CTX["Top-k passages as context"]
+    SCOPE --> GATE{"Relevance gate\n(global only:\nbest cosine >= 0.25?)"}
+    GATE -- "no (off-topic)" --> REJ["Reply: 'I could not find\nthat in the circulars'\n(no LLM call)"]
+    GATE -- yes --> CTX["Top-k passages as context"]
     CTX --> GEN["LLM grounded generation\n(cite circular numbers,\nrefuse if unsupported)"]
     GEN --> ANS["Answer + citations"]
     ANS --> LOG["Persist to conversation"]
@@ -272,3 +452,51 @@ flowchart TB
     A --> RM{"Deadline near/passed\n& not acknowledged?"}
     RM -- yes --> REM["Reminder + flag late"]
 ```
+
+---
+
+## Figure 5.5 — AI service layer (class diagram)
+
+```mermaid
+classDiagram
+    class NLPPipeline {
+        <<base>>
+        #load spaCy / BERT / SBERT
+    }
+    class AIEngine {
+        +summarize(text) SummaryResult
+        +classify(text) list
+        +extract_entities(text, top_n) list
+        +extract_keywords(text, top_n, reference) list
+        +answer_with_context(question, context)
+    }
+    class LLMSummarizer {
+        +available() bool
+        +summarize(text, target_words) str
+        +answer(question, context) str
+        +refine_query(question) str
+        +keywords(text, n) list
+    }
+    class VectorIndex {
+        +build(circulars) dict
+        +search(query, top_k, circular_id) list
+        +is_empty() bool
+        +stats() dict
+    }
+    class ChatbotService {
+        +answer(question, top_k, circular_id) dict
+    }
+
+    NLPPipeline <|-- AIEngine : extends
+    AIEngine ..> LLMSummarizer : uses (LLM summary,\nBART fallback)
+    ChatbotService ..> VectorIndex : hybrid retrieval\n+ relevance gate
+    ChatbotService ..> LLMSummarizer : query rewrite\n+ grounded answer
+    ChatbotService ..> AIEngine : extractive fallback
+```
+
+> `AIEngine` extends `NLPPipeline` (inheriting the loaded spaCy/BERT/SBERT
+> models) and delegates fluent summarization to `LLMSummarizer`, falling back to
+> its own BART path when Ollama is unavailable. `ChatbotService` composes
+> `VectorIndex` (retrieval + the relevance gate) and `LLMSummarizer` (query
+> rewriting and grounded generation), with `AIEngine`'s QA reader as the
+> extractive fallback.

@@ -58,7 +58,6 @@ export default function ManagerDashboard() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wide text-brand-600">WF-04</div>
           <h1 className="text-xl font-bold text-ink">Dashboard</h1>
         </div>
         <div className="flex gap-2">

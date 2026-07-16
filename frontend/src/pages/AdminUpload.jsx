@@ -228,9 +228,6 @@ export default function AdminUpload() {
   return (
     <div className="mx-auto max-w-2xl space-y-4">
       <div>
-        <div className="text-xs font-semibold uppercase tracking-wide text-brand-600">
-          WF-05
-        </div>
         <h1 className="text-xl font-bold text-ink">Upload Circular</h1>
       </div>
 
