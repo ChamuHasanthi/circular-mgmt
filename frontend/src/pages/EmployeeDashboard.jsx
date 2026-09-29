@@ -10,13 +10,6 @@ import { useAuth } from "../context/AuthContext.jsx";
 // Employees see only their assigned circulars + their acknowledgement status;
 // Managers/Administrators see all circulars + the publication status, and can
 // manage them (admin: edit/delete · manager: flag a problem).
-const CATEGORIES = [
-  "Anti-Money Laundering",
-  "Technology Risk",
-  "Capital Adequacy",
-  "Consumer Protection",
-  "General",
-];
 const STATUSES = ["Unread", "Read", "Acknowledged"];
 // Employee-facing labels (stored values unchanged).
 const STATUS_LABEL = { Unread: "New", Read: "Read", Acknowledged: "Confirmed" };
@@ -43,6 +36,7 @@ export default function EmployeeDashboard() {
   const isStaff = isAdmin || isManager;
 
   const [items, setItems] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [q, setQ] = useState("");
   const [category, setCategory] = useState("");
   const [status, setStatus] = useState("");
@@ -73,6 +67,12 @@ export default function EmployeeDashboard() {
     load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category, status]);
+
+  useEffect(() => {
+    client.get("/circulars/categories")
+      .then((res) => setCategories(res.data))
+      .catch(() => flash("Could not load categories."));
+  }, []);
 
   function flash(text) {
     setMsg(text);
@@ -149,7 +149,7 @@ export default function EmployeeDashboard() {
             value={q} onChange={(e) => setQ(e.target.value)} />
           <select className="input" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="">All categories</option>
-            {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
+            {categories.map((c) => <option key={c.id} value={c.name}>{c.name}</option>)}
           </select>
           {!isStaff && (
             <select className="input" value={status} onChange={(e) => setStatus(e.target.value)}>

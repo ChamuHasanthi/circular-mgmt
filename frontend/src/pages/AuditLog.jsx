@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import client from "../api/client";
 
 // Administrator audit-log viewer — accountability / non-repudiation (NFR).
-// Immutable trail of every recorded action, filterable by action and date.
+// Immutable trail of every recorded action, filterable by action, date, and user.
 const ACTION_TONE = (a) =>
   a.includes("FAILED") || a.includes("REJECTED") || a.includes("DELETED")
     ? "bg-red-50 text-status-unread"
@@ -13,9 +13,10 @@ const ACTION_TONE = (a) =>
 export default function AuditLog() {
   const [rows, setRows] = useState([]);
   const [actions, setActions] = useState([]);
+  const [users, setUsers] = useState([]);
   const [action, setAction] = useState("");
   const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
+  const [userId, setUserId] = useState("");
   const [loading, setLoading] = useState(true);
 
   async function load() {
@@ -23,7 +24,7 @@ export default function AuditLog() {
     const params = {};
     if (action) params.action = action;
     if (from) params.date_from = from;
-    if (to) params.date_to = to;
+    if (userId) params.user_id = userId;
     try {
       const { data } = await client.get("/audit", { params });
       setRows(data);
@@ -34,6 +35,7 @@ export default function AuditLog() {
 
   useEffect(() => {
     client.get("/audit/actions").then((r) => setActions(r.data)).catch(() => {});
+    client.get("/users").then((r) => setUsers(r.data)).catch(() => {});
     load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -54,8 +56,11 @@ export default function AuditLog() {
             <option value="">All actions</option>
             {actions.map((a) => <option key={a} value={a}>{a}</option>)}
           </select>
-          <input type="date" className="input" value={from} onChange={(e) => setFrom(e.target.value)} />
-          <input type="date" className="input" value={to} onChange={(e) => setTo(e.target.value)} />
+          <input type="date" className="input" aria-label="From date" value={from} onChange={(e) => setFrom(e.target.value)} />
+          <select className="input" aria-label="Filter by user" value={userId} onChange={(e) => setUserId(e.target.value)}>
+            <option value="">All users</option>
+            {users.map((u) => <option key={u.id} value={u.id}>{u.full_name} ({u.username})</option>)}
+          </select>
           <button type="submit" className="btn-primary">Filter</button>
         </form>
       </div>

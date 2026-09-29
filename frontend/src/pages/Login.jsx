@@ -64,7 +64,7 @@ export default function Login() {
               className="input"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="admin / manager / employee"
+              placeholder="username"
               autoFocus
             />
           </div>

@@ -22,19 +22,10 @@ circulars_bp = Blueprint("circulars", __name__)
 ALLOWED_EXTENSIONS = {".pdf"}
 
 
-def _ensure_categories():
-    """Seed the managed category taxonomy from the defaults if it's empty."""
-    if Category.query.first() is None:
-        for name in Classification.CATEGORIES:
-            db.session.add(Category(name=name))
-        db.session.commit()
-
-
 @circulars_bp.get("/categories")
 @jwt_required()
 def list_categories():
     """Managed compliance categories (for the manual classification picker)."""
-    _ensure_categories()
     return jsonify([c.to_dict() for c in Category.query.order_by(Category.name).all()])
 
 
