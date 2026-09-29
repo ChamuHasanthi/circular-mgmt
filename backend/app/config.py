@@ -17,6 +17,7 @@ load_dotenv(os.path.join(_BACKEND_ROOT, ".env"))
 class Config:
     # ---- Flask core ----
     SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-change-me")
+    REPORT_BANK_NAME = os.getenv("REPORT_BANK_NAME", "Bank Compliance Office")
 
     # ---- Database ----
     SQLALCHEMY_DATABASE_URI = os.getenv(

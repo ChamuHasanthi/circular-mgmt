@@ -3,7 +3,7 @@ import csv
 import io
 from datetime import datetime
 
-from flask import Blueprint, jsonify, request, send_file
+from flask import Blueprint, jsonify, request, send_file, current_app
 from flask_jwt_extended import jwt_required
 from sqlalchemy import func, case
 
@@ -12,6 +12,7 @@ from ..models.circular import Circular, Summary, Classification
 from ..models.identity import User, Department
 from ..models.engagement import Acknowledgement
 from ..services.security import roles_required
+from ..services.compliance_report import build_compliance_pdf
 
 dashboard_bp = Blueprint("dashboard", __name__)
 
@@ -211,31 +212,77 @@ def export_csv():
 @jwt_required()
 @roles_required("Manager", "Administrator")
 def export_pdf():
-    """FR-34: export the compliance report as a PDF (rendered with PyMuPDF)."""
-    import fitz
+    """FR-34: export a structured snapshot of dashboard compliance metrics."""
+    total = Acknowledgement.query.count()
+    acknowledged = Acknowledgement.query.filter_by(status="Acknowledged").count()
+    read = Acknowledgement.query.filter_by(status="Read").count()
+    unread = Acknowledgement.query.filter_by(status="Unread").count()
+    late = Acknowledgement.query.filter_by(is_late=True).count()
 
-    rows = _compliance_report_rows()
-    doc = fitz.open()
-    page = doc.new_page()
-    y = 60
-    page.insert_text((50, y), "Compliance Report", fontsize=18, fontname="hebo")
-    y += 22
-    page.insert_text((50, y), f"Generated {datetime.utcnow():%Y-%m-%d %H:%M} UTC",
-                     fontsize=9, fontname="helv")
-    y += 28
-    header = f"{'Circular':<12}{'Priority':<10}{'Recip.':<8}{'Ack':<6}{'Overdue':<9}{'Rate':<6}"
-    page.insert_text((50, y), header, fontsize=10, fontname="hebo")
-    y += 16
-    for num, title, prio, total, ack, overdue, rate in rows:
-        line = f"{num:<12}{prio:<10}{total:<8}{ack:<6}{overdue:<9}{rate:<6}"
-        page.insert_text((50, y), line, fontsize=9, fontname="helv")
-        y += 13
-        page.insert_text((60, y), title[:90], fontsize=8, fontname="helv", color=(0.4, 0.4, 0.4))
-        y += 16
-        if y > 760:
-            page = doc.new_page()
-            y = 60
-    data = io.BytesIO(doc.tobytes())
-    doc.close()
+    dept_rows = (db.session.query(Department.name, func.count(Acknowledgement.id),
+                                  _ACK_SUM, _PENDING_SUM, _LATE_SUM)
+                 .join(User, User.department_id == Department.id)
+                 .join(Acknowledgement, Acknowledgement.user_id == User.id)
+                 .group_by(Department.id).order_by(Department.name).all())
+    circular_rows = (db.session.query(Circular, func.count(Acknowledgement.id),
+                                      _ACK_SUM, _PENDING_SUM, _LATE_SUM)
+                     .outerjoin(Acknowledgement, Acknowledgement.circular_id == Circular.id)
+                     .filter(Circular.status == "published")
+                     .group_by(Circular.id).order_by(Circular.published_at.desc()).all())
+    category_rows = (db.session.query(Classification.category,
+                                      func.count(func.distinct(Classification.circular_id)))
+                     .join(Circular, Circular.id == Classification.circular_id)
+                     .filter(Circular.status == "published")
+                     .group_by(Classification.category)
+                     .order_by(func.count(func.distinct(Classification.circular_id)).desc()).all())
+
+    user_total = User.query.count()
+    user_active = User.query.filter_by(is_active=True).count()
+    real_summaries = Summary.query.filter(Summary.bart_model != "stub")
+    avg_time = db.session.query(func.avg(Summary.processing_seconds)).filter(
+        Summary.bart_model != "stub").scalar()
+    avg_rouge = db.session.query(func.avg(Summary.rouge_score)).scalar()
+    models = [m for (m,) in db.session.query(Summary.bart_model).distinct().all()
+              if m and m != "stub"]
+
+    report_data = {
+        "summary": {
+            "published": len(circular_rows), "recipients": total,
+            "acknowledged": acknowledged, "read": read, "unread": unread,
+            "pending": read + unread, "overdue": late,
+            "rate": round(100 * acknowledged / total) if total else 0,
+        },
+        "departments": [
+            {"name": name, "total": int(t or 0), "acknowledged": int(a or 0),
+             "pending": int(p or 0), "overdue": int(l or 0),
+             "rate": round(100 * (a or 0) / t) if t else 0}
+            for name, t, a, p, l in dept_rows
+        ],
+        "circulars": [
+            {"number": c.circular_number, "title": c.title, "priority": c.priority,
+             "deadline": c.ack_deadline.strftime("%Y-%m-%d") if c.ack_deadline else "Not set",
+             "total": int(t or 0), "acknowledged": int(a or 0),
+             "pending": int(p or 0), "overdue": int(l or 0),
+             "rate": round(100 * (a or 0) / t) if t else 0}
+            for c, t, a, p, l in circular_rows
+        ],
+        "categories": [(name, int(count)) for name, count in category_rows],
+        "users": {"total": user_total, "active": user_active,
+                  "inactive": user_total - user_active},
+        "roles": [(role, int(count)) for role, count in
+                  db.session.query(User.role, func.count(User.id)).group_by(User.role).all()],
+        "user_departments": [(name, int(count)) for name, count in
+                             db.session.query(Department.name, func.count(User.id))
+                             .outerjoin(User, User.department_id == Department.id)
+                             .group_by(Department.id).order_by(Department.name).all()],
+        "ai": {"summaries": real_summaries.count(),
+               "avg_seconds": round(float(avg_time), 2) if avg_time is not None else None,
+               "avg_rouge": round(float(avg_rouge), 3) if avg_rouge is not None else None,
+               "models": models},
+    }
+    data = io.BytesIO(build_compliance_pdf(
+        report_data, bank_name=current_app.config["REPORT_BANK_NAME"],
+        generated_at=datetime.utcnow(),
+    ))
     return send_file(data, mimetype="application/pdf", as_attachment=True,
                      download_name="compliance_report.pdf")
